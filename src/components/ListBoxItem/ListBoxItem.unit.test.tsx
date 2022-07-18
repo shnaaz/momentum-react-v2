@@ -35,7 +35,7 @@ describe('ListBoxItem', () => {
   });
 
   describe('snapshot', () => {
-    it('should match snapshot', () => {
+    it.only('should match snapshot', () => {
       useContextMock.mockReturnValue(state);
       const item = state.collection.getItem('$.0');
 
