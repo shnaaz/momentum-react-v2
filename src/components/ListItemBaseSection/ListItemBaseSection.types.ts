@@ -26,4 +26,9 @@ export interface Props {
    * Horizontal position of the section inside a list item
    */
   position?: 'start' | 'middle' | 'end' | 'fill';
+
+  /**
+   * To provide tooltip
+   */
+  title?: string;
 }

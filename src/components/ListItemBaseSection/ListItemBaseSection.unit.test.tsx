@@ -53,6 +53,16 @@ describe('ListItemBaseSection', () => {
 
       expect(container).toMatchSnapshot();
     });
+
+    it('should match snapshot with title', () => {
+      expect.assertions(1);
+
+      const title = 'some title';
+
+      container = mount(<ListItemBaseSection title={title}>Test</ListItemBaseSection>);
+
+      expect(container).toMatchSnapshot();
+    });
   });
 
   describe('attributes', () => {
@@ -93,7 +103,7 @@ describe('ListItemBaseSection', () => {
       expect(element.getAttribute('style')).toBe(styleString);
     });
 
-    it('should have provided position when style is position', () => {
+    it('should have provided position when position is provided', () => {
       expect.assertions(1);
 
       const position = 'end';
@@ -103,6 +113,18 @@ describe('ListItemBaseSection', () => {
       const element = container.find(ListItemBaseSection).getDOMNode();
 
       expect(element.getAttribute('data-position')).toBe(position);
+    });
+
+    it('should have provided title when title is provided', () => {
+      expect.assertions(1);
+
+      const title = 'some title';
+
+      container = mount(<ListItemBaseSection title={title}>Test</ListItemBaseSection>);
+
+      const element = container.find(ListItemBaseSection).getDOMNode();
+
+      expect(element.getAttribute('title')).toBe(title);
     });
   });
 });
